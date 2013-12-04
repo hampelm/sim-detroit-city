@@ -13,14 +13,34 @@
 
   </head>
   <body>
-    <h1>Sim Detroit City</h1>
+    <h1>SDC</h1>
 
     <div id="map"></div>
+
+    <div id="toolbar"></div>
+
+    <script type="text/html" id='zones'>
+      <div id="zones"></div>
+      <div id="buildings"></div>
+    </script>
+    <script type="text/html" id='zone'>
+      <div class="zone">
+        <h2><%= name %></h2>
+      </div>
+    </script>
+    <script type="text/html" id='building'>
+      <div class="building">
+        <h2><%= name %></h2>
+      </div>
+    </script>
+
 
 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js""></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/api.js"></script>
     <script src="js/app.js"></script>
 
   </body>
