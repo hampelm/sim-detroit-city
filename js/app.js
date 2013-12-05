@@ -49,7 +49,7 @@ $(function(){
 		init: function() {
 			$('#map').height($(window).height() - $('h1').height() - 40);
 
-			map = L.map('map').setView([42.353022,-83.078098], 12);
+			map = L.map('map').setView([42.367989,-83.086338], 12);
 
 		  baseLayer = L.tileLayer(app.BASELAYER);
 		  map.addLayer(baseLayer);
