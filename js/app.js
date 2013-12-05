@@ -47,6 +47,8 @@ $(function(){
 		selectedParcels: {},
 
 		init: function() {
+			$('#map').height($(window).height() - $('h1').height() - 40);
+
 			map = L.map('map').setView([42.353022,-83.078098], 12);
 
 		  baseLayer = L.tileLayer(app.BASELAYER);
@@ -54,6 +56,16 @@ $(function(){
 
 		 	landuse = L.tileLayer(app.LANDUSE);
 		  map.addLayer(landuse);
+			// https://www.mapbox.com/v3/matth.7nb9ms4i/9/137/189.grid.json
+			var utfGrid = new L.UtfGrid('https://www.mapbox.com/v3/matth.7nb9ms4i/{z}/{x}/{y}.grid.json?callback={cb}', {
+			    resolution: 4
+			});
+			utfGrid.on('mouseover', function (e) {
+				$('h1').text(e.data.name);
+				console.log(e.data.name);
+			});
+
+			map.addLayer(utfGrid);
 
 		  //app.getParcels();
 		},
