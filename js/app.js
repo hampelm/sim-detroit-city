@@ -57,7 +57,7 @@ $(function(){
 		 	landuse = L.tileLayer(app.LANDUSE);
 		  map.addLayer(landuse);
 			// https://www.mapbox.com/v3/matth.7nb9ms4i/9/137/189.grid.json
-			var utfGrid = new L.UtfGrid('https://www.mapbox.com/v3/matth.7nb9ms4i/{z}/{x}/{y}.grid.json?callback={cb}', {
+			var utfGrid = new L.UtfGrid('https://{s}.tiles.mapbox.com/v3/matth.7nb9ms4i/{z}/{x}/{y}.grid.json?callback={cb}', {
 			    resolution: 4
 			});
 			utfGrid.on('mouseover', function (e) {
