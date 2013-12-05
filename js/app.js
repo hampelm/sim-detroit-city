@@ -13,6 +13,8 @@ $(function(){
 
 		BASELAYER: 'http://a.tiles.mapbox.com/v3/matth.map-n9bps30s/{z}/{x}/{y}.png',
 
+		LANDUSE: 'http://a.tiles.mapbox.com/v3/matth.7nb9ms4i/{z}/{x}/{y}.png',
+
 		ZONES: {
 			'residential': {
 				types: ['high', 'medium', 'low'],
@@ -45,12 +47,15 @@ $(function(){
 		selectedParcels: {},
 
 		init: function() {
-			map = L.map('map').setView([42.42, -83.02 ], 17);
+			map = L.map('map').setView([42.353022,-83.078098], 12);
 
 		  baseLayer = L.tileLayer(app.BASELAYER);
 		  map.addLayer(baseLayer);
 
-		  app.getParcels();
+		 	landuse = L.tileLayer(app.LANDUSE);
+		  map.addLayer(landuse);
+
+		  //app.getParcels();
 		},
 
 		handleParcelClickFactory: function(feature) {
